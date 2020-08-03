@@ -42,10 +42,10 @@ before_install:
 
 install:
   - composer update ${COMPOSER_FLAGS} --prefer-dist --no-interaction
-  - bin/simple-phpunit install
+  - ./bin/simple-phpunit install
 
 script:
   - composer validate --strict --no-check-lock
   # simple-phpunit is the PHPUnit wrapper provided by the PHPUnit Bridge component and
   # it helps with testing legacy code and deprecations (composer require symfony/phpunit-bridge)
-  - bin/simple-phpunit $PHPUNIT_FLAGS
+  - ./bin/simple-phpunit $PHPUNIT_FLAGS
